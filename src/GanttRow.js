@@ -14,6 +14,7 @@ export default class GanttRow extends Component {
     markerStyle: PropTypes.object,
     steps: PropTypes.array.isRequired,
     templateName: PropTypes.string,
+    text: PropTypes.string,
     title: PropTypes.string
   };
   static contextTypes = {
@@ -42,6 +43,7 @@ export default class GanttRow extends Component {
       opacity: 0.5
     },
     templateName: 'default',
+    text: '',
     title: ''
   };
 
@@ -180,7 +182,7 @@ export default class GanttRow extends Component {
   }
 
   render() {
-    const { title, markerStyle, templateName, steps } = this.props;
+    const { title, text, markerStyle, templateName, steps } = this.props;
     const { active } = this.state;
     const tdStyle = { whiteSpace: 'nowrap' };
     const { barStyle, barWrapperStyle } = this.calculateBarStyle(
@@ -205,6 +207,7 @@ export default class GanttRow extends Component {
           <div style={barWrapperStyle}>
             <GanttBar
               title={title}
+              text={text}
               templateName={templateName}
               steps={steps}
               style={barStyle}
