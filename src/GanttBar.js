@@ -101,9 +101,11 @@ export default class GanttBar extends Component {
                   borderBottomRightRadius: step.offTimelineRight ? '6%' : '0%',
                   width: `${step.displayWidth}px`,
                   backgroundColor: step.color,
-                  marginLeft: index === 0 ? `${step.startPixel}px` : '0px'
+                  color: step.textColor,
+                  marginLeft: index === 0 ? `${step.startPixel}px` : '0px',
+                  textAlign: 'center'
                 }}
-              />
+              >{this.props.text}</div>
             </div>
           );
         })}
