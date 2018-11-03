@@ -50,6 +50,7 @@ export default class GanttBar extends Component {
     return {
       name: template.steps[index].name,
       color: template.steps[index].color,
+      textColor: template.steps[index].textColor,
       duration: stepDuration,
       theoreticalWidth,
       displayWidth,
